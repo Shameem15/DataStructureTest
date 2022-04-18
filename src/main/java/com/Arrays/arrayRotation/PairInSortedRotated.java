@@ -75,16 +75,16 @@ public class PairInSortedRotated {
         return false;
     }
 
-    private static int getPivot(int[] arr, int l, int h) {
-        if (l > h) {
+    private static int getPivot(int[] arr, int low, int high) {
+        if (low > high) {
             return -1;
         }
 
-        if (l == h) {
-            return l;
+        if (low == high) {
+            return low;
         }
 
-        int mid = (l + h) / 2;
+        int mid = (low + high) / 2;
 
         if (arr[mid] > arr[mid + 1]) {
             return mid;
@@ -94,10 +94,10 @@ public class PairInSortedRotated {
             return mid - 1;
         }
 
-        if (arr[l] >= arr[mid]) {
-            return getPivot(arr, l, mid - 1);
+        if (arr[low] >= arr[mid]) {
+            return getPivot(arr, low, mid - 1);
         } else {
-            return getPivot(arr, mid + 1, h);
+            return getPivot(arr, mid + 1, high);
         }
 
     }
