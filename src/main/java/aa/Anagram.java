@@ -9,53 +9,10 @@ public class Anagram {
 	
 	public static void main(String[] args) {
 		
-		String s1 = "cde";
-		String s2 = "dcf";
-		
-		check(s1, s2);
+		String s1 = "cdee";
+		String s2 = "dcff";
+
 		checkByASCII(s1, s2);
-		StringBuffer eligibleDevices = new StringBuffer();
-		eligibleDevices.append("1234");
-		eligibleDevices.append(",");
-		eligibleDevices.append("12345");
-		eligibleDevices.append(",");
-		eligibleDevices.append("12346");
-		eligibleDevices.append(",");
-		eligibleDevices.append("12347");
-		eligibleDevices.append(",");
-		
-		
-		String listOfDevice = "1234,32323,43434,43434,43434,4434,";
-		List<String> devices = Arrays.asList(eligibleDevices.toString().split(","));
-		
-		System.out.println(devices.size());
-		System.out.println(devices);
-		for (String device: devices) {
-			Long deviceLong = Long.parseLong(device);
-			
-			System.out.println("deviceLong: " + deviceLong);
-		}
-	}
-	
-	private static void check(String s1, String s2) {
-		int count = 0;
-		int lengthS1 = s1.length();
-		int lengthS2 = s2.length();
-		Set<Character> common = new HashSet<>();
-		
-		for (int i = 0; i < s1.length(); i++) {
-			for (int j = 0; j < s2.length(); j++) {
-				if (s1.charAt(i) == s2.charAt(j)) {
-					count++;
-					common.add(s1.charAt(i));
-					break;
-				}
-			}
-		}
-		
-		int setSize = common.size();
-		int totalCount = (lengthS1 - setSize) + (lengthS2 - setSize);
-		System.out.println("totalCount :" + totalCount);
 	}
 	
 	
