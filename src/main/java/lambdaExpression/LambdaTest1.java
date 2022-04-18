@@ -1,4 +1,4 @@
-package practice;
+package lambdaExpression;
 
 public class LambdaTest1 {
 	

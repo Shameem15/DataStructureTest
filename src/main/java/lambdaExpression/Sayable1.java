@@ -1,4 +1,4 @@
-package practice;
+package lambdaExpression;
 
 @FunctionalInterface
 public interface Sayable1 {

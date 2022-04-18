@@ -1,4 +1,4 @@
-package practice;
+package lambdaExpression;
 
 public interface Sayable {
 	String say();
