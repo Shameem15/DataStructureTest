@@ -13,8 +13,14 @@ public class Anagram {
 		{
 			System.out.println("Its Anagram ");
 		}
-		else
+		else {
 			System.out.println("Its not Anagram ");
+		}
+
+		//2nd method
+
+		String result = areAnagram(s1.toCharArray(), s2.toCharArray())? "Its Anagram" : "Its not Anagram";
+		System.out.println(result);
 	}
 
 	private static boolean checkAnagram(String s1, String s2) {
