@@ -4,7 +4,7 @@ public class RotationCount {
 
     public static void main (String[] args)
     {
-        int arr[] = {1};
+        int arr[] = {6, 1, 2, 3, 4, 5};
         int n = arr.length;
 
         System.out.println("countRotations: " + countRotations(arr, n));
