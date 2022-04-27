@@ -1,0 +1,82 @@
+package com.Arrays.Rearrange;
+
+import java.util.Arrays;
+
+public class PushZeroEnd {
+
+
+    public static void main(String[] args) {
+        int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
+        int n = arr.length;
+        System.out.println("Array before pushing zeros to the back: " + Arrays.toString(arr));
+        pushZerosToEnd(arr, n);
+        System.out.println("Array after pushing zeros to the back: " + Arrays.toString(arr));
+
+        //other method
+        pushZerosToEndOtherMethod(arr, n);
+        System.out.println("OtherMethod pushing zeros to the back: " + Arrays.toString(arr));
+
+    }
+
+    private static void pushZerosToEndOtherMethod(int[] arr, int n) {
+        int count = 0;  // Count of non-zero elements
+
+        // Traverse the array. If element encountered is
+        // non-zero, then replace the element at index 'count'
+        // with this element
+        for (int i = 0; i < n; i++)
+            if (arr[i] != 0)
+                arr[count++] = arr[i]; // here count is
+        // incremented
+
+        // Now all non-zero elements have been shifted to
+        // front and 'count' is set as index of first 0.
+        // Make all elements 0 from count to end.
+        while (count < n)
+            arr[count++] = 0;
+    }
+
+    private static void pushZerosToEnd(int[] arr, int n) {
+        int sizeOfZero = 0, sizeOfNonZero = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0) {
+                sizeOfZero++;
+            } else {
+                sizeOfNonZero++;
+            }
+        }
+
+        System.out.println("sizeOfZero: " + sizeOfZero);
+        System.out.println("sizeOfNonZero: " + sizeOfNonZero);
+
+        //store into both arrays
+        int[] zeros = new int[sizeOfZero];
+        int[] nonZeros = new int[sizeOfNonZero];
+
+        int indexZero = 0;
+        int indexNonZero = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0) {
+                zeros[indexZero] = arr[i];
+                indexZero++;
+            } else {
+                nonZeros[indexNonZero] = arr[i];
+                indexNonZero++;
+            }
+        }
+
+        indexZero = 0;
+        indexNonZero = 0;
+        for (int i = 0; i < sizeOfNonZero; i++) {
+            arr[i] = nonZeros[indexNonZero];
+            indexNonZero++;
+        }
+
+        for (int i = indexNonZero; i < n; i++) {
+            arr[i] = zeros[indexZero];
+            indexZero++;
+        }
+
+    }
+}
