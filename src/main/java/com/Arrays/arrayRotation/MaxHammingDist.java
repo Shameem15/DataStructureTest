@@ -2,6 +2,10 @@ package com.Arrays.arrayRotation;
 
 import java.util.Arrays;
 
+/*
+* Hamming distance between two arrays or strings of equal length is the number of positions
+* at which the corresponding characters (elements) are different.
+* */
 public class MaxHammingDist {
 
     public static void main (String[] args)
@@ -9,7 +13,7 @@ public class MaxHammingDist {
         int arr[] = { 2, 4, 8, 0 };
         int n = arr.length;
         System.out.println("actualArrys: " + Arrays.toString(arr));
-        System.out.println("MaxHammingDist: " + maxHamming(arr, n));
+        System.out.println("MaxHammingDist: " + maxHamming(arr, n));  //output:4
     }
 
     private static int maxHamming(int[] arr, int n) {
